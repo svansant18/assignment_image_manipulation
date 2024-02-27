@@ -1,64 +1,120 @@
-# Numpy assignment: Image manipulation
-The codesource in this project will be able to render the images from the assignment.pdf file found under the documentation folder.
+<!-- TOC -->
+* [Introduction](#introduction)
+* [Copy this structure - TODO - remove after initial setup](#copy-this-structure---todo---remove-after-initial-setup)
+* [Folder structure](#folder-structure)
+  * [data](#data)
+    * [input](#input)
+    * [intermediate](#intermediate)
+    * [output](#output)
+  * [documentation](#documentation)
+  * [models](#models)
+  * [notebooks](#notebooks)
+  * [scripts](#scripts)
+  * [Additional files](#additional-files)
+    * [.gitattributes](#gitattributes)
+    * [.gitkeep](#gitkeep)
+    * [.gitignore](#gitignore)
+    * [environment.yml](#environmentyml)
+    * [README.md](#readmemd)
+    * [settings.json](#settingsjson)
+* [Project information - TODO](#project-information---todo)
+* [Resources - TODO](#resources---todo)
+<!-- TOC -->
 
-## Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+> "Torture the data, and it will confess to anything" – Ronald Coase
 
-### Prerequisites
-Before starting with the project, make sure you have **Anaconda** installed, which will automatically install Python, and the **Jupyter Notebook**. This will ensure a smooth and hassle-free experience while running the code present in the repository. If you don’t have Anaconda installed, you can download it from the official website. After installation, you can start the Jupyter Notebook via the Anaconda Navigator or the command line.
+# Introduction
+This repo was made for the Data Science course from AB Syntra.
+Data and code can be freely used an redistributed with or without changes, no license applied.
 
-### Installing <br>
+# Copy this structure - TODO - remove after initial setup
+After copying this structure execute these steps:
 
-##### 1. Downloading the GIT repository.<br>
-To download the source code from this GitHub repository, you have two options:
+- Check and customize .gitignore
+- Check and customize .gitattributes for Git LFS
+- Execute 'git lfs install' on your local machine in the directory of your project
+- Clean up README.md file and add project specific information
+- Remove and add Table of contents chapters => when using Visual Studio Code, you can use *Markdown All in One*, this plugin will automatically update your table of contents after saving your file
 
-##### Using Git
-If you have Git installed on your system, open your terminal/command prompt and run the following command:
+> [!CAUTION]
+> Do not forget to remove this chapter.
 
-> git clone https://github.com/username/repository.git
+# Folder structure
+Below you will find more information on how the project folder structure was set-up and where to find and store the appropriate files.
 
-*Replace username with the GitHub **username** and **repository** with the name of this repository.*
+![alt text](images/folder-structure.png "Folder structure image 1")
 
-##### Downloading as ZIP
-If you don’t have Git installed or prefer to download the code as a ZIP file, simply click on the green Code button on the repository page and then click *Download ZIP*. Once downloaded, extract the ZIP file to access the source code.
+![alt text](images/folder-structure-2.png "Folder structure image 2")
 
-Remember to replace the URL in the git clone command with the actual URL of this repository.
+## data
+Data files can be found in this folder structure in the correct sub-folder as described in the next sub-chapters.
 
-<br>
+### input
+Raw/unchanged files as provided or downloaded.
+Changes to dataset will not be saved here to prevent mistakes from happening.
 
-##### 2. Setting up the environment.
+### intermediate
+Processed files will be stored here like files that are cleaned and/or transformed.
 
-Open the **Anaconda Powershell Prompt** navigate to the repository and create a new environment by using the *conda env create* command and specifying the path to the environment.yaml file in this project. This will create a new environment with the name and dependencies specified in the *environment.yaml* file.
+### output
+Data that does not need processing anymore but can directly be used.
+Reports/plots/... can also be stored as final products.
 
->   *conda env create -f environment.yaml*
+## documentation
+Additional information and guides to help people get started.
+Slides, PDFs, User Stories, UML diagrams, ... can be stored here as well.
 
-Check if the environment has been succesfully installed by using the command:
+## models
+Information concerning models. Can be .json files with hyperparameters of the model or finished models, ONNX files, etc...
 
->  *conda info --envs*
+## notebooks
+In this folder we save Jupyter notebooks used for analysis, visualization and experimentation.
 
-You can then activate the environment using the conda activate command and the name of the environment. For example, in this project the default name is *assignment*, you can run:
+## scripts
+Re-usable python libraries like:
 
->  *conda activate assignment*
+- Utilities
+- Data collection/retrieval
+- Preprocessing
+- Data analysis
+- Model building
+- ...
 
-You can now use the anaconda environment as usual. To deactivate the environment, you can run:
+ ## Additional files
+ In this chapter we are discussing files that are situated in your project root folder and other folders.
 
-> *conda deactivate*
+### .gitattributes
+Defines which files should be tracked by Git LFS (Large File Storage).
+This is useful for large files like datasets, models, etc...
+Execute 'git lfs install' on your local machine in the directory of your project to activate Git LFS.
 
-## Deployment
-First, open the **Anaconda Navigator** application. You’ll see a list of applications available in your Anaconda environment. Click on the ‘Launch’ button under **Jupyter Notebook**. This will open a new tab in your web browser with a file explorer.
+### .gitkeep
+Git does not track empty folders, to prevent this we can add a .gitkeep file to the folder.
+This file can be removed after adding files to the folder.
 
-Navigate to the */notebook* directory containing assignment.pynb and click on it to open the notebook. Select a cell and press the ‘Run’ button or Shift + Enter to execute it.
+### .gitignore
+Because we are hosting our files on a Git repository, we use a .gitignore files so that temporary files are not checked in.
+This can be generated by Github while initializing the repository, you can use [gitignore.io](https://www.toptal.com/developers/gitignore/) or create one yourself. 
 
- 
-## Built With
-* VS Code
-* Jupyter Notebook
+### environment.yml
+Contains the information about the conda environment.
+This file can be used to create a new environment with the same packages as the original environment.
+Execute `conda env create -f environment.yml` to create the environment.
+Use `conda activate syntra_minimal` to activate the environment.
 
-## Author(s)
-* **Steve Van Sant**
+### README.md
+Markdown file with information about the project, contains the information you are reading now.
 
-## Contributing
-N/A
+ ### settings.json
+ In here you can put application/script related parameters.
+ Extracting these parameters makes it easier to switch environments.
 
-## License
-This project is licensed under the MIT License - see the LICENSE.md file for details
+
+ # Project information - TODO
+ Information about the project will follow
+
+ # Resources - TODO
+ Add resources used in the project
+
+ - Github markdown: [guide](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+ - Gitignore generator: [gitignore.io](https://www.toptal.com/developers/gitignore/)
